@@ -1,0 +1,713 @@
+/**
+ * Kawaii Admin Styles
+ * Shared styles for all Amelia Addon admin pages
+ * Pastel Mint & Pink Theme - No Gradients
+ */
+
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@400;500;600;700&display=swap');
+
+:root {
+  --kawaii-pink: #FFB5C5;
+  --kawaii-pink-light: #FFE4EC;
+  --kawaii-pink-dark: #E8829A;
+  --kawaii-mint: #98D9C2;
+  --kawaii-mint-light: #D4F1E8;
+  --kawaii-mint-dark: #5FBDA0;
+  --kawaii-cream: #FFF9F5;
+  --kawaii-lavender: #E8D5F2;
+  --kawaii-peach: #FFCAB0;
+  --kawaii-yellow: #FFF3B5;
+  --kawaii-text: #5A4A5A;
+  --kawaii-text-light: #8A7A8A;
+  --kawaii-shadow: rgba(255, 181, 197, 0.25);
+  --kawaii-border-radius: 16px;
+  --kawaii-font: 'Quicksand', sans-serif;
+}
+
+/* ============================================
+   MAIN WRAP CONTAINER
+   ============================================ */
+.kawaii-wrap {
+  background: var(--kawaii-mint-light);
+  padding: 30px;
+  border-radius: var(--kawaii-border-radius);
+  font-family: var(--kawaii-font);
+  box-shadow: 0 8px 32px var(--kawaii-shadow);
+  margin-top: 20px;
+}
+
+/* ============================================
+   PAGE TITLES
+   ============================================ */
+.kawaii-wrap h1,
+.kawaii-page-title {
+  font-family: var(--kawaii-font);
+  font-weight: 700;
+  font-size: 28px;
+  color: var(--kawaii-text);
+  margin-bottom: 24px;
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.kawaii-page-title::before {
+  content: '';
+  display: inline-block;
+  width: 8px;
+  height: 8px;
+  background: var(--kawaii-pink);
+  border-radius: 50%;
+}
+
+.kawaii-page-title::after {
+  content: '';
+  display: inline-block;
+  width: 6px;
+  height: 6px;
+  background: var(--kawaii-mint);
+  border-radius: 50%;
+}
+
+/* ============================================
+   CARDS
+   ============================================ */
+.kawaii-card {
+  background: white;
+  padding: 24px;
+  border-radius: var(--kawaii-border-radius);
+  box-shadow: 0 4px 16px rgba(255, 181, 197, 0.12);
+  margin-bottom: 20px;
+}
+
+.kawaii-card h2 {
+  font-family: var(--kawaii-font);
+  font-weight: 700;
+  font-size: 18px;
+  color: var(--kawaii-text);
+  margin: 0 0 16px 0;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.kawaii-card h2 .icon-dot {
+  width: 10px;
+  height: 10px;
+  background: var(--kawaii-mint);
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+.kawaii-card p {
+  font-family: var(--kawaii-font);
+  color: var(--kawaii-text);
+  font-size: 14px;
+  line-height: 1.6;
+  margin: 0 0 16px 0;
+}
+
+.kawaii-card .description {
+  font-size: 13px;
+  color: var(--kawaii-text-light);
+}
+
+/* ============================================
+   STAT CARDS
+   ============================================ */
+.kawaii-stats {
+  display: flex;
+  gap: 16px;
+  margin-bottom: 24px;
+  flex-wrap: wrap;
+}
+
+.kawaii-stat-card {
+  background: white;
+  padding: 20px 28px;
+  border-radius: var(--kawaii-border-radius);
+  box-shadow: 0 4px 16px rgba(255, 181, 197, 0.12);
+  min-width: 140px;
+  text-align: center;
+}
+
+.kawaii-stat-card .stat-value {
+  font-family: var(--kawaii-font);
+  font-size: 32px;
+  font-weight: 700;
+  color: var(--kawaii-mint-dark);
+  line-height: 1;
+}
+
+.kawaii-stat-card .stat-label {
+  font-family: var(--kawaii-font);
+  font-size: 13px;
+  color: var(--kawaii-text-light);
+  margin-top: 8px;
+  font-weight: 500;
+}
+
+.kawaii-stat-card.stat-total .stat-value {
+  color: var(--kawaii-mint-dark);
+}
+
+.kawaii-stat-card.stat-active .stat-value {
+  color: var(--kawaii-mint-dark);
+}
+
+.kawaii-stat-card.stat-completed .stat-value {
+  color: var(--kawaii-pink-dark);
+}
+
+/* ============================================
+   FORM ELEMENTS
+   ============================================ */
+.kawaii-wrap input[type="text"],
+.kawaii-wrap input[type="email"],
+.kawaii-wrap input[type="number"],
+.kawaii-wrap input[type="password"],
+.kawaii-wrap input[type="search"],
+.kawaii-wrap textarea,
+.kawaii-wrap select {
+  font-family: var(--kawaii-font);
+  padding: 12px 16px;
+  border: 2px solid var(--kawaii-pink-light);
+  border-radius: 12px;
+  background: white;
+  font-size: 14px;
+  color: var(--kawaii-text);
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 8px rgba(255, 181, 197, 0.1);
+}
+
+.kawaii-wrap input[type="text"]:focus,
+.kawaii-wrap input[type="email"]:focus,
+.kawaii-wrap input[type="number"]:focus,
+.kawaii-wrap input[type="password"]:focus,
+.kawaii-wrap input[type="search"]:focus,
+.kawaii-wrap textarea:focus,
+.kawaii-wrap select:focus {
+  outline: none;
+  border-color: var(--kawaii-mint);
+  box-shadow: 0 4px 16px rgba(152, 217, 194, 0.25);
+}
+
+.kawaii-wrap input::placeholder,
+.kawaii-wrap textarea::placeholder {
+  color: var(--kawaii-text-light);
+}
+
+.kawaii-wrap label {
+  font-family: var(--kawaii-font);
+  font-weight: 600;
+  color: var(--kawaii-text);
+  font-size: 14px;
+  display: block;
+  margin-bottom: 8px;
+}
+
+/* Multi-select styling */
+.kawaii-wrap select[multiple] {
+  padding: 8px;
+  min-height: 150px;
+}
+
+.kawaii-wrap select[multiple] option {
+  padding: 8px 12px;
+  border-radius: 6px;
+  margin-bottom: 2px;
+}
+
+.kawaii-wrap select[multiple] option:checked {
+  background: var(--kawaii-mint-light);
+  color: var(--kawaii-mint-dark);
+}
+
+/* ============================================
+   BUTTONS
+   ============================================ */
+.kawaii-btn,
+.kawaii-wrap .button {
+  font-family: var(--kawaii-font);
+  padding: 12px 24px;
+  border-radius: 25px;
+  font-weight: 600;
+  font-size: 14px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  border: 2px solid transparent;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.kawaii-btn-primary,
+.kawaii-wrap .button-primary {
+  background: var(--kawaii-mint);
+  color: white !important;
+  border-color: var(--kawaii-mint);
+}
+
+.kawaii-btn-primary:hover,
+.kawaii-wrap .button-primary:hover {
+  background: var(--kawaii-mint-dark);
+  border-color: var(--kawaii-mint-dark);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(152, 217, 194, 0.4);
+  color: white !important;
+}
+
+.kawaii-btn-secondary,
+.kawaii-wrap .button:not(.button-primary) {
+  background: white;
+  color: var(--kawaii-text) !important;
+  border-color: var(--kawaii-pink-light);
+}
+
+.kawaii-btn-secondary:hover,
+.kawaii-wrap .button:not(.button-primary):hover {
+  background: var(--kawaii-pink-light);
+  border-color: var(--kawaii-pink);
+  transform: translateY(-2px);
+  color: var(--kawaii-pink-dark) !important;
+}
+
+.kawaii-btn-link,
+.kawaii-wrap .page-title-action {
+  background: var(--kawaii-mint);
+  color: white !important;
+  padding: 10px 20px;
+  border-radius: 25px;
+  font-family: var(--kawaii-font);
+  font-weight: 600;
+  font-size: 13px;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  border: none;
+}
+
+.kawaii-btn-link:hover,
+.kawaii-wrap .page-title-action:hover {
+  background: var(--kawaii-mint-dark);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 16px rgba(152, 217, 194, 0.4);
+  color: white !important;
+}
+
+/* ============================================
+   TABLES
+   ============================================ */
+.kawaii-wrap table.widefat,
+.kawaii-wrap .wp-list-table {
+  border-collapse: separate;
+  border-spacing: 0;
+  border: none;
+  background: transparent;
+  border-radius: var(--kawaii-border-radius);
+  overflow: hidden;
+}
+
+.kawaii-wrap table.widefat thead th,
+.kawaii-wrap .wp-list-table thead th {
+  font-family: var(--kawaii-font);
+  text-transform: uppercase;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  color: var(--kawaii-text-light);
+  padding: 14px 16px;
+  background: white;
+  border: none;
+  border-bottom: 2px solid var(--kawaii-pink-light);
+}
+
+.kawaii-wrap table.widefat tbody tr,
+.kawaii-wrap .wp-list-table tbody tr {
+  background: white;
+  transition: all 0.2s ease;
+}
+
+.kawaii-wrap table.widefat tbody tr:hover,
+.kawaii-wrap .wp-list-table tbody tr:hover {
+  background: var(--kawaii-cream);
+}
+
+.kawaii-wrap table.widefat tbody td,
+.kawaii-wrap .wp-list-table tbody td {
+  font-family: var(--kawaii-font);
+  padding: 14px 16px;
+  border: none;
+  border-bottom: 1px solid var(--kawaii-pink-light);
+  font-size: 14px;
+  color: var(--kawaii-text);
+  vertical-align: middle;
+}
+
+.kawaii-wrap table.widefat tbody tr:last-child td,
+.kawaii-wrap .wp-list-table tbody tr:last-child td {
+  border-bottom: none;
+}
+
+/* Table links */
+.kawaii-wrap table a {
+  color: var(--kawaii-mint-dark);
+  text-decoration: none;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+.kawaii-wrap table a:hover {
+  color: #3A9A7D;
+  text-decoration: underline;
+  text-decoration-style: wavy;
+  text-underline-offset: 3px;
+}
+
+/* Row actions */
+.kawaii-wrap .row-actions {
+  font-size: 13px;
+}
+
+.kawaii-wrap .row-actions span {
+  color: var(--kawaii-text-light);
+}
+
+.kawaii-wrap .row-actions a {
+  color: var(--kawaii-mint-dark);
+}
+
+.kawaii-wrap .row-actions a.delete,
+.kawaii-wrap .row-actions a.trash {
+  color: var(--kawaii-pink-dark);
+}
+
+/* ============================================
+   NOTICES & MESSAGES
+   ============================================ */
+.kawaii-wrap .notice {
+  font-family: var(--kawaii-font);
+  border-radius: 12px;
+  border-left-width: 4px;
+  padding: 12px 16px;
+  margin: 16px 0;
+}
+
+.kawaii-wrap .notice-success {
+  background: var(--kawaii-mint-light);
+  border-left-color: var(--kawaii-mint-dark);
+  color: var(--kawaii-mint-dark);
+}
+
+.kawaii-wrap .notice-error {
+  background: var(--kawaii-pink-light);
+  border-left-color: var(--kawaii-pink-dark);
+  color: var(--kawaii-pink-dark);
+}
+
+.kawaii-wrap .notice-warning {
+  background: var(--kawaii-yellow);
+  border-left-color: #C4A000;
+  color: #8B6B00;
+}
+
+.kawaii-wrap .notice-info {
+  background: var(--kawaii-lavender);
+  border-left-color: #8B6B9E;
+  color: #5A4A6A;
+}
+
+/* ============================================
+   PAGINATION
+   ============================================ */
+.kawaii-wrap .tablenav-pages {
+  font-family: var(--kawaii-font);
+}
+
+.kawaii-wrap .tablenav-pages a,
+.kawaii-wrap .tablenav-pages span.current {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 36px;
+  height: 36px;
+  padding: 0 12px;
+  border-radius: 10px;
+  font-weight: 600;
+  font-size: 13px;
+  transition: all 0.3s ease;
+  text-decoration: none;
+}
+
+.kawaii-wrap .tablenav-pages a {
+  background: white;
+  border: 2px solid var(--kawaii-pink-light);
+  color: var(--kawaii-text);
+}
+
+.kawaii-wrap .tablenav-pages a:hover {
+  background: var(--kawaii-pink-light);
+  border-color: var(--kawaii-pink);
+}
+
+.kawaii-wrap .tablenav-pages span.current {
+  background: var(--kawaii-mint);
+  border: 2px solid var(--kawaii-mint);
+  color: white;
+}
+
+/* ============================================
+   MODAL STYLING
+   ============================================ */
+.kawaii-modal-backdrop {
+  background: rgba(90, 74, 90, 0.6);
+}
+
+.kawaii-modal {
+  background: white;
+  border-radius: var(--kawaii-border-radius);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+  overflow: hidden;
+}
+
+.kawaii-modal-header {
+  padding: 20px 24px;
+  border-bottom: 2px solid var(--kawaii-pink-light);
+  background: var(--kawaii-cream);
+}
+
+.kawaii-modal-header h2 {
+  font-family: var(--kawaii-font);
+  font-weight: 700;
+  color: var(--kawaii-text);
+  margin: 0;
+}
+
+.kawaii-modal-body {
+  padding: 24px;
+}
+
+.kawaii-modal-footer {
+  padding: 16px 24px;
+  border-top: 2px solid var(--kawaii-pink-light);
+  display: flex;
+  justify-content: flex-end;
+  gap: 12px;
+}
+
+/* ============================================
+   VERSION BADGE
+   ============================================ */
+.kawaii-version-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 4px 12px;
+  border-radius: 20px;
+  background: var(--kawaii-mint-light);
+  color: var(--kawaii-mint-dark);
+  font-family: var(--kawaii-font);
+  font-weight: 600;
+  font-size: 12px;
+  border: 2px solid var(--kawaii-mint);
+}
+
+.kawaii-version-badge::before {
+  content: '';
+  width: 5px;
+  height: 5px;
+  background: var(--kawaii-mint-dark);
+  border-radius: 50%;
+}
+
+/* ============================================
+   FORM TABLE (Settings)
+   ============================================ */
+.kawaii-wrap .form-table {
+  border-collapse: collapse;
+  width: 100%;
+}
+
+.kawaii-wrap .form-table th {
+  font-family: var(--kawaii-font);
+  font-weight: 600;
+  color: var(--kawaii-text);
+  padding: 16px 16px 16px 0;
+  text-align: left;
+  width: 200px;
+  vertical-align: top;
+}
+
+.kawaii-wrap .form-table td {
+  padding: 16px 0;
+}
+
+.kawaii-wrap .form-table tr {
+  border-bottom: 1px solid var(--kawaii-pink-light);
+}
+
+.kawaii-wrap .form-table tr:last-child {
+  border-bottom: none;
+}
+
+/* ============================================
+   CHECKBOX & RADIO
+   ============================================ */
+.kawaii-wrap input[type="checkbox"],
+.kawaii-wrap input[type="radio"] {
+  width: 18px;
+  height: 18px;
+  accent-color: var(--kawaii-mint);
+  cursor: pointer;
+}
+
+/* ============================================
+   STATUS LABELS
+   ============================================ */
+.kawaii-status {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 14px;
+  border-radius: 20px;
+  font-family: var(--kawaii-font);
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.kawaii-status::before {
+  content: '';
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+}
+
+.kawaii-status-active {
+  background: var(--kawaii-mint-light);
+  color: var(--kawaii-mint-dark);
+}
+
+.kawaii-status-active::before {
+  background: var(--kawaii-mint-dark);
+}
+
+.kawaii-status-completed {
+  background: var(--kawaii-lavender);
+  color: #8B6B9E;
+}
+
+.kawaii-status-completed::before {
+  background: #8B6B9E;
+}
+
+.kawaii-status-pending {
+  background: var(--kawaii-yellow);
+  color: #C4A000;
+}
+
+.kawaii-status-pending::before {
+  background: #C4A000;
+}
+
+.kawaii-status-canceled {
+  background: var(--kawaii-pink-light);
+  color: var(--kawaii-pink-dark);
+}
+
+.kawaii-status-canceled::before {
+  background: var(--kawaii-pink-dark);
+}
+
+/* ============================================
+   RESPONSIVE
+   ============================================ */
+@media screen and (max-width: 782px) {
+  /* Global overflow prevention */
+  html, body, .wp-admin {
+    overflow-x: hidden !important;
+    max-width: 100vw !important;
+  }
+  
+  .kawaii-wrap {
+    padding: 15px;
+    max-width: 100% !important;
+    overflow-x: hidden !important;
+  }
+  
+  .kawaii-stats {
+    flex-direction: column;
+  }
+  
+  .kawaii-stat-card {
+    width: 100%;
+  }
+  
+  .kawaii-card {
+    max-width: 100% !important;
+    overflow-x: hidden !important;
+    box-sizing: border-box !important;
+  }
+  
+  .kawaii-wrap .form-table th {
+    display: block;
+    width: 100%;
+    padding-bottom: 8px;
+  }
+  
+  .kawaii-wrap .form-table td {
+    display: block;
+    width: 100%;
+  }
+  
+  /* Button overflow fixes - 75% width, centered */
+  .kawaii-btn,
+  .kawaii-wrap .button {
+    width: 75%;
+    max-width: 75%;
+    box-sizing: border-box;
+    text-align: center;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 10px;
+  }
+  
+  .kawaii-btn-link,
+  .kawaii-wrap .page-title-action {
+    display: block;
+    width: 75%;
+    box-sizing: border-box;
+    text-align: center;
+    margin: 0 auto 10px auto;
+  }
+  
+  /* Modal mobile fixes */
+  .kawaii-modal-footer {
+    flex-direction: column;
+    gap: 8px;
+  }
+  
+  .kawaii-modal-footer .button {
+    width: 100%;
+  }
+  
+  /* Fix images */
+  img {
+    max-width: 100% !important;
+    height: auto !important;
+  }
+  
+  /* Fix inputs */
+  input[type="text"],
+  input[type="email"],
+  input[type="number"],
+  textarea,
+  select {
+    max-width: 100% !important;
+    width: 100% !important;
+    box-sizing: border-box !important;
+  }
+}

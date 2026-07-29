@@ -1,0 +1,1226 @@
+/**
+
+ * All of the CSS for your admin-specific functionality should be
+
+ * included in this file.
+
+ */
+
+/*pdf css*/
+
+/* @import url("https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,100..900;1,100..900&display=swap"); */
+
+/* @import url("https://fonts.googleapis.com/css2?family=Abril+Fatface&display=swap"); */
+
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap");
+
+:root {
+  --primary-color: #5f9289;
+}
+
+.h3,
+h3 {
+  font-size: 1.1rem;
+}
+
+.container {
+  max-width: 1320px;
+}
+
+/* ============================================
+   PDF GENERATION STYLES - Force Desktop Sizing
+   These styles ensure PDFs are generated at desktop
+   dimensions regardless of the viewing device.
+   ============================================ */
+.generating,
+.generating .pdfHtml,
+.generating .pdf-capture,
+.generating .pdf-capture .container {
+  width: 1200px !important;
+  max-width: 1200px !important;
+  min-width: 1200px !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
+  overflow: visible !important;
+}
+
+.generating * {
+  /* Reset any mobile-specific max-width constraints */
+  max-width: none;
+}
+
+.generating img {
+  /* Override mobile image constraints during PDF generation */
+  max-width: 100% !important;
+  height: auto !important;
+}
+
+.generating .gauge {
+  width: 450px !important;
+  height: 250px !important;
+  max-width: 450px !important;
+}
+
+.generating .risk-gauge {
+  max-width: 500px !important;
+  margin: 30px auto !important;
+}
+
+.generating table {
+  width: 100% !important;
+  max-width: 100% !important;
+  display: table !important;
+}
+
+.generating .section_heading {
+  font-size: inherit !important;
+  padding: inherit !important;
+}
+
+/* Ensure buttons are hidden during PDF generation */
+.generating .amlia_form_btns,
+.generating .sticky-bottom,
+.generating .removefrompdf {
+  display: none !important;
+}
+
+.mobile-global-tooltip {
+  position: absolute;
+  background: #000;
+  color: #fff;
+  padding: 6px 10px;
+  font-size: 12px;
+  border-radius: 4px;
+  white-space: nowrap;
+  z-index: 99999;
+  opacity: 0;
+  transition: opacity 0.2s ease;
+  pointer-events: none;
+}
+
+.mobile-global-tooltip.show {
+  opacity: 1;
+}
+
+.bg_primary {
+  background-color: var(--primary-color) !important;
+}
+
+.bg_brown {
+  background-color: #c2a174 !important;
+}
+
+/* .am-table__header__row .am-table__header__cell:nth-child(2),.am-table__body__row .am-table__body__cell:nth-child(2) {
+    flex-basis: 270px !important;
+} */
+.text_primary {
+  color: var(--primary-color);
+}
+
+.pdfHtml * {
+  margin-top: 0;
+  /* font-family: "Jost", serif; */
+  /* font-family: "Abril Fatface", serif; */
+  font-family: "Montserrat", serif;
+  /* font-size: 25px; */
+}
+
+.temp-div *,
+.temp-div {
+  font-size: 16px;
+}
+
+.d-none {
+  display: none !important;
+}
+
+.container {
+  margin-left: auto;
+
+  margin-right: auto;
+
+  box-sizing: border-box;
+}
+
+.addon_amelia_btns button,
+.addon_amelia_btns a {
+  padding: 7px;
+
+  height: 34px;
+}
+
+.innerContainer {
+  margin: 0 auto;
+}
+
+img {
+  max-width: 100%;
+}
+
+.pdfHtml table,
+.w-100 {
+  width: 100%;
+}
+
+.w-40 {
+  width: 40%;
+}
+
+.w-60 {
+  width: 60%;
+}
+
+.formInput textarea,
+.formInput input {
+  border: none;
+
+  box-shadow: none;
+
+  outline: none;
+
+  border-bottom: 1px solid #000;
+
+  color: #000;
+
+  width: 100%;
+
+  border-radius: 0;
+
+  height: 20px;
+
+  padding: 2px 0;
+
+  margin-bottom: 15px;
+
+  background-color: #fff;
+
+  font-size: 16px;
+}
+
+.formInput textarea {
+  resize: none;
+
+  height: auto;
+
+  line-height: 32px;
+
+  border: 1px solid #000;
+
+  padding: 10px;
+
+  min-height: 30px !important;
+}
+
+.formInput h2 {
+  color: var(--primary-color);
+}
+
+.pdfHtml table {
+  border: 1px solid #000;
+
+  border-collapse: collapse;
+
+  margin-top: 10px;
+
+  margin-bottom: 10px;
+}
+
+.pdfHtml tbody>tr:nth-child(even) {
+  background-color: rgba(0, 0, 0, 0.1);
+}
+
+.pdfHtml table td {
+  border: 1px solid #000;
+
+  padding: 3px 5px;
+}
+
+.pdfHtml table thead {
+  background-color: var(--primary-color);
+}
+
+.pdfHtml table thead td,
+.pdfHtml table thead th {
+  color: #fff;
+}
+
+.text-nowrap {
+  white-space: nowrap;
+}
+
+.detailedAnalysisContainer {
+  display: flex;
+
+  flex-wrap: wrap;
+
+  margin-bottom: 30px;
+}
+
+.detailedAnalysisContainer .leftInputBox {
+  width: calc(58% - 30px);
+
+  margin-right: 30px;
+}
+
+.detailedAnalysisContainer .detailedAnalysisImg {
+  width: 42%;
+}
+
+.examinationType h2 {
+  background-color: var(--primary-color);
+
+  color: #fff;
+
+  text-transform: uppercase;
+
+  text-align: center;
+
+  padding: 5px;
+}
+
+.sectionTitle {
+  color: var(--primary-color);
+
+  text-transform: uppercase;
+
+  font-size: 25px;
+
+  line-height: 35px;
+
+  font-weight: 700;
+
+  margin-bottom: 30px;
+}
+
+.canvaContainer .grid-container {
+  display: flex;
+
+  /*  grid-template-columns: repeat(3, 1fr);
+
+  grid-template-rows: auto; */
+
+  gap: 20px;
+
+  justify-content: center;
+}
+
+.canvaContainer .grid-item {
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+}
+
+.canvaContainer .item-1,
+.canvaContainer .item-2 {
+  grid-row: span 2;
+}
+
+/*pdf css*/
+
+[popover]:-internal-popover-in-top-layer::backdrop {
+  background-color: rgba(0, 0, 0, 0.7);
+}
+
+.popupSection button {
+  cursor: pointer;
+}
+
+.popClose,
+.viewBtn {
+  background-color: #5f9289;
+
+  cursor: pointer;
+}
+
+.amelia-btn-primary {
+  --bs-btn-bg: #5f9289;
+
+  --bs-btn-border-color: #5f9289;
+
+  --bs-btn-hover-bg: #5f9289;
+
+  --bs-btn-hover-border-color: #5f9289;
+
+  --bs-btn-active-bg: #5f9289;
+
+  --bs-btn-active-border-color: #5f9289;
+
+  --bs-btn-disabled-bg: #5f9289;
+
+  --bs-btn-disabled-border-color: #5f9289;
+}
+
+.viewBtn svg {
+  margin-left: 5px;
+
+  fill: #fff;
+}
+
+#customerInfoPopup .modal-dialog {
+  border: none;
+
+  max-width: 1050px;
+
+  margin-left: auto;
+
+  margin-right: auto;
+
+  width: 100%;
+
+  padding: 20px;
+}
+
+.popContent * {
+  margin: 0;
+
+  font-size: 16px;
+
+  font-weight: 500;
+
+  color: #000;
+}
+
+.popContent table td {
+  vertical-align: middle;
+}
+
+.popContent .section_heading,
+.section_heading {
+  padding: 20px;
+
+  background-color: #5f9289;
+  /* Background color */
+
+  color: #fff;
+  /* Text color */
+
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  /* Subtle shadow */
+
+  margin-bottom: 10px;
+}
+
+.amlia_form_btns {
+  text-align: center;
+
+  margin-top: 10px;
+}
+
+/*devNadim*/
+
+.loader-overlay {
+  display: none;
+  /* Hidden by default */
+
+  position: fixed;
+  /* Fixed position */
+
+  top: 0;
+
+  left: 0;
+
+  width: 100%;
+  /* Full width */
+
+  height: 100%;
+  /* Full height */
+
+  background-color: rgba(255,
+      255,
+      255,
+      0.8);
+  /* Semi-transparent white background */
+
+  backdrop-filter: blur(5px);
+  /* Blur effect for the background */
+
+  z-index: 9999;
+  /* Ensure it's above other elements */
+
+  justify-content: center;
+  /* Center horizontally */
+
+  align-items: center;
+  /* Center vertically */
+
+  flex-direction: column;
+  /* Stack children vertically */
+}
+
+/* Loader spinner styles */
+
+.loader {
+  border: 8px solid #f3f3f3;
+  /* Light grey background */
+
+  border-top: 8px solid #3498db;
+  /* Blue color for the spinner */
+
+  border-radius: 50%;
+  /* Make it circular */
+
+  width: 50px;
+  /* Width of the loader */
+
+  height: 50px;
+  /* Height of the loader */
+
+  animation: spin 1s linear infinite;
+  /* Spin animation */
+
+  position: absolute;
+
+  top: 50%;
+
+  left: 50%;
+
+  right: 50%;
+
+  bottom: 50%;
+}
+
+/* Animation for spinning effect */
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+/* risk css start */
+
+.risk-gauge {
+  text-align: center;
+
+  font-family: Arial, sans-serif;
+
+  margin: 30px;
+}
+
+.gauge {
+  /*  width: 300px; */
+
+  /*  height: 150px; */
+
+  width: 450px;
+
+  height: 250px;
+
+  /*
+
+  border-top-left-radius: 300px;
+
+  border-top-right-radius: 300px;
+
+  background: linear-gradient(to right, #28a745, #ffc107, #dc3545);
+
+  
+
+  overflow: hidden;
+
+  border: 5px solid #333; */
+
+  margin: 0 auto;
+
+  position: relative;
+
+  transition: background 0.5s ease-in-out;
+}
+
+.gauge-arc {
+  width: 100%;
+
+  height: 100%;
+
+  border-top-left-radius: 300px;
+
+  border-top-right-radius: 300px;
+
+  border: 10px solid transparent;
+
+  border-left: 10px solid #28a745;
+
+  border-top: 10px solid #ffc107;
+
+  border-right: 10px solid #dc3545;
+
+  box-sizing: border-box;
+
+  box-sizing: border-box;
+}
+
+.needle {
+  position: absolute;
+
+  width: 5px;
+
+  height: 130px;
+
+  background: red;
+
+  top: 100%;
+
+  left: 50%;
+
+  transform-origin: bottom center;
+
+  transform: rotate(-90deg);
+  /* Default Low Position */
+
+  transition: transform 0.5s ease-in-out;
+
+  z-index: 10;
+}
+
+.center-dot {
+  position: absolute;
+
+  width: 20px;
+
+  height: 20px;
+
+  top: calc(100% - 10px);
+
+  left: calc(50% - 10px);
+
+  z-index: 11;
+
+  transition: transform 0.5s ease-in-out, clip-path 0.5s ease-in-out;
+
+  /* background: gold;
+
+  border-radius: 50%;*/
+
+  box-shadow: 0 0 5px #000;
+
+  background-color: #000;
+
+  border-radius: 50%;
+}
+
+/* .lowCenterDot {
+
+  clip-path: polygon(30% 84.5%, 90.5% 84%, 3.5% 2%);
+
+}
+
+.mediumCenterDot {
+
+  clip-path: polygon(30% 84.5%, 90.5% 84%, 59.5% -2%);
+
+}
+
+.highCenterDot {
+
+  clip-path: polygon(16% 84.5%, 78.5% 88%, 97.5% -0%);
+
+} */
+
+.labels {
+  position: absolute;
+
+  top: 75%;
+
+  left: 50%;
+
+  transform: translateX(-50%);
+
+  display: flex;
+
+  justify-content: space-between;
+
+  width: 90%;
+}
+
+.label {
+  font-weight: 500;
+
+  font-size: 14px;
+
+  text-shadow: 0px 0px 2px #fff;
+}
+
+.low {
+  color: #000;
+
+  position: absolute;
+
+  left: 10%;
+
+  top: 80%;
+}
+
+.medium {
+  color: #000;
+
+  position: absolute;
+
+  left: 50%;
+
+  top: 60%;
+
+  transform: translateX(-50%);
+}
+
+.high {
+  color: #000;
+
+  position: absolute;
+
+  right: 10%;
+
+  top: 80%;
+}
+
+.risk-level {
+  margin-top: 20px;
+
+  font-size: 18px;
+
+  font-weight: bold;
+}
+
+.controls {
+  margin-top: 20px;
+}
+
+.controls button {
+  margin: 5px;
+
+  padding: 10px 20px;
+
+  font-size: 14px;
+
+  cursor: pointer;
+}
+
+@page {
+  margin-left: 0;
+
+  margin-right: 0;
+}
+
+@media print {
+  * {
+    margin: 0;
+
+    padding: 0;
+
+    box-sizing: border-box;
+  }
+
+  @page {
+    margin-left: 0;
+
+    margin-right: 0;
+  }
+}
+
+.borderBottomDotted {
+  border-bottom: 1px dotted #000;
+}
+
+/* New Css */
+
+.pdfInput {
+  padding: 0 5px;
+
+  width: 100%;
+
+  border: none;
+
+  border-bottom: 1px dotted #000;
+}
+
+.pdfInput:focus {
+  outline: none;
+
+  border: none;
+
+  border-bottom: 1px solid #000;
+}
+
+.icon {
+  position: absolute;
+
+  width: max-content;
+
+  height: 155px;
+
+  background-size: contain;
+
+  background-repeat: no-repeat;
+
+  background-position: top;
+
+  transform-origin: bottom;
+
+  left: 50%;
+
+  bottom: 0;
+
+  transform: translate(-50%) rotate(15deg);
+
+  object-fit: contain;
+
+  z-index: 999;
+}
+
+.iconXCheck {
+  min-width: 40px;
+}
+
+.pdf-capture .container {
+  width: 100%;
+
+  /* max-width: 1200px; */
+
+  margin: 0 auto;
+
+  page-break-before: always;
+
+  font-size: 16px;
+}
+
+.amlia_form_btns button {
+  margin-right: 7px;
+
+  margin-bottom: 7px;
+}
+
+.d-flex.mb-4 .me-3 img {
+  min-width: 40px;
+}
+
+textarea {
+  box-sizing: content-box;
+
+  padding: 5px;
+
+  resize: none;
+
+  overflow: hidden;
+}
+
+.addon_amelia_btns_ref {
+  margin-top: 10px;
+  padding-bottom: 0;
+  overflow: visible !important;
+}
+
+.addon_amelia_btns .amelia-btn-primary,
+.addon_amelia_btns_ref .amelia-btn-primary {
+  padding: 7px !important;
+
+  height: 40px;
+
+  width: 40px;
+
+  min-width: 40px;
+
+  text-align: center;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+}
+
+.addon_amelia_btns_ref .referred {
+  background: red !important;
+  border-color: red !important;
+}
+
+.addon_amelia_btns_ref .attended {
+  background: green !important;
+  border-color: green !important;
+}
+
+.addon_amelia_btns_ref .no-referred {
+  background: green !important;
+  border-color: green !important;
+}
+
+.addon_amelia_btns_ref .no-attend {
+  background: red !important;
+  border-color: red !important;
+}
+
+.addon_amelia_btns_ref .no-data {
+  background: gray !important;
+  border-color: gray !important;
+}
+
+.addon_amelia_btns_ref .info {
+  background: yellow !important;
+  border-color: yellow !important;
+}
+
+.am-appointment-data .el-row .el-col-lg-14 .am-appointments-flex-row-middle-align>.el-col:nth-child(3) {
+  min-width: 250px;
+}
+
+input,
+textarea,
+.formInput textarea {
+  box-sizing: border-box;
+}
+
+.formInput textarea[name="comments"],
+.formInput textarea[name="lession_comments"],
+.formInput textarea[name="pra_comments"],
+.formInput textarea[name="info_comments"] {
+  min-height: 50px !important;
+  margin-top: 16px;
+  border: 1px solid #aaa;
+  border-radius: 4px;
+}
+
+#preview2 .imgFulCover {
+  aspect-ratio: 1 / 1;
+}
+
+#customerInfoPopup {
+  z-index: 2020;
+}
+
+@media screen and (max-width: 1200px) {
+  .pdf-page {
+    width: 100%;
+    /* Allow for full-width on smaller devices */
+
+    max-width: none;
+    /* Allow the content to take full screen width */
+
+    font-size: 12px;
+    /* Adjust font size for smaller screens */
+
+    padding: 0;
+  }
+}
+
+@media only screen and (max-width: 767px) {
+  /* IMPORTANT: These mobile styles should NOT apply during PDF generation */
+  /* The .generating class overrides these with desktop sizes */
+
+  .formInput textarea,
+  .formInput input,
+  .pdfHtml label,
+  .pdfHtml * {
+    /* font-size: 15px !important;
+
+    line-height: 24px; */
+  }
+
+  /* Only apply mobile gauge size when NOT generating PDF */
+  .gauge:not(.generating .gauge) {
+    width: 300px;
+    height: 160px;
+  }
+
+  .icon {
+    height: 95px;
+  }
+
+  .sectionTitle {
+    /* font-size: 20px;
+
+    line-height: 25px; */
+  }
+
+  .section7 img.w-75 {
+    max-width: 150px;
+  }
+
+  .canvaDiv {
+    max-width: 100%;
+  }
+
+  .formInput textarea,
+  .formInput input {
+    min-height: 25px;
+
+    margin-bottom: 7px;
+  }
+
+  /* Only apply mobile PDF styles when NOT generating */
+  .pdf-capture .container:not(.generating .pdf-capture .container) {
+    font-size: 12px;
+  }
+  
+  /* Mobile button overflow fixes */
+  .addon_amelia_btns button,
+  .addon_amelia_btns a {
+    width: 100%;
+    box-sizing: border-box;
+    margin-bottom: 8px;
+  }
+  
+  .addon_amelia_btns_ref {
+    flex-wrap: wrap;
+    max-width: 100%;
+  }
+  
+  .addon_amelia_btns_ref .amelia-btn-primary {
+    flex-shrink: 0;
+  }
+  
+  .amlia_form_btns {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    padding: 10px !important;
+    width: 100% !important;
+    box-sizing: border-box !important;
+    align-items: center !important;
+  }
+  
+  .amlia_form_btns button,
+  .amlia_form_btns .btn {
+    width: 75% !important;
+    margin: 0 !important;
+    box-sizing: border-box !important;
+  }
+  
+  /* Popup mobile fixes */
+  #customerInfoPopup .modal-dialog {
+    padding: 10px;
+    max-width: 100%;
+  }
+  
+  .popContent .section_heading,
+  .section_heading {
+    padding: 12px;
+    font-size: 14px;
+  }
+}
+
+/* ============================================
+   GLOBAL MOBILE OVERFLOW FIX
+   ============================================ */
+@media screen and (max-width: 782px) {
+  /* Prevent horizontal scroll on all pages */
+  html, body {
+    overflow-x: hidden !important;
+    max-width: 100vw !important;
+  }
+  
+  .wrap,
+  .kawaii-wrap,
+  .kawaii-card,
+  #wpbody-content,
+  .wp-admin {
+    max-width: 100% !important;
+    overflow-x: hidden !important;
+  }
+  
+  /* Fix images that might overflow */
+  img {
+    max-width: 100% !important;
+    height: auto !important;
+  }
+  
+  /* Fix form elements */
+  input[type="text"],
+  input[type="email"],
+  input[type="number"],
+  input[type="password"],
+  input[type="search"],
+  textarea,
+  select {
+    max-width: 100% !important;
+    box-sizing: border-box !important;
+  }
+  
+  /* Fix all buttons - 75% width, centered */
+  .btn,
+  .button,
+  input[type="submit"],
+  input[type="button"] {
+    max-width: 75% !important;
+    width: 75% !important;
+    box-sizing: border-box !important;
+    white-space: normal !important;
+    word-wrap: break-word !important;
+    display: block !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+  }
+  
+  /* Fix tables */
+  table {
+    max-width: 100% !important;
+    display: block !important;
+    overflow-x: auto !important;
+  }
+  
+  /* Fix flex containers */
+  .d-flex,
+  [style*="display: flex"],
+  [style*="display:flex"] {
+    flex-wrap: wrap !important;
+  }
+  
+  /* Fix PDF preview container */
+  .pdf-capture,
+  .pdf-capture .container,
+  #combined-preview-inline,
+  main {
+    max-width: 100% !important;
+    overflow-x: hidden !important;
+  }
+  
+  /* Fix sticky bottom buttons */
+  .sticky-bottom {
+    position: relative !important;
+    width: 100% !important;
+    left: 0 !important;
+    right: 0 !important;
+    padding: 10px !important;
+    box-sizing: border-box !important;
+  }
+  
+  /* Fix modal on mobile */
+  .modal-content {
+    width: 90% !important;
+    max-width: 90% !important;
+    margin: 20px auto !important;
+    box-sizing: border-box !important;
+  }
+  
+  .modal-content input,
+  .modal-content button {
+    width: 75% !important;
+    box-sizing: border-box !important;
+    display: block !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+  }
+}
+
+/* //booking table */
+.amelia-booking-wrap {
+  background: #fff;
+  padding: 20px;
+  border-radius: 12px;
+}
+
+.amelia-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.amelia-table thead th {
+  text-transform: uppercase;
+  font-size: 12px;
+  color: #6b7280;
+  padding: 14px;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.amelia-table tbody td {
+  padding: 16px 14px;
+  border-bottom: 1px solid #f1f5f9;
+  font-size: 14px;
+}
+
+.amelia-table tbody tr:hover {
+  background: #f9fafb;
+}
+
+.sub-id {
+  font-size: 12px;
+  color: #9ca3af;
+}
+
+/* Status badges */
+.status-badge {
+  padding: 5px 12px;
+  border-radius: 999px;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.status-approved {
+  background: #dcfce7;
+  color: #166534;
+}
+
+.status-pending {
+  background: #fef3c7;
+  color: #92400e;
+}
+
+.status-no-show {
+  background: #fee2e2;
+  color: #991b1b;
+}
+
+.status-canceled {
+  background: #e5e7eb;
+  color: #374151;
+}
+
+/* Pagination */
+.amelia-pagination a {
+  display: inline-block;
+  margin: 0 4px;
+  padding: 6px 12px;
+  border-radius: 6px;
+  background: #f3f4f6;
+  text-decoration: none;
+  color: #111827;
+}
+
+.amelia-pagination a.active {
+  background: #2563eb;
+  color: #fff;
+}
+
+.addon_amelia_btns_ref {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+}
+
+.addon_amelia_btns_ref .el-button {
+  position: relative;
+  width: 38px;
+  height: 38px;
+  padding: 0;
+  border-radius: 10px;
+  background: linear-gradient(90deg, #4A90E2, #2563eb);
+  color: #fff;
+  box-shadow:
+    0 6px 12px rgba(0, 0, 0, 0.12),
+    inset 0 1px 0 rgba(255, 255, 255, 0.9);
+  border: 1px solid rgba(0, 0, 0, 0.06);
+  cursor: pointer;
+  transition: all 0.25s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.addon_amelia_btns_ref .el-button:hover {
+  transform: translateY(-3px);
+  box-shadow:
+    0 12px 22px rgba(0, 0, 0, 0.2),
+    inset 0 1px 0 rgba(255, 255, 255, 0.9);
+}
+
+.addon_amelia_btns_ref .el-button:hover img,
+.addon_amelia_btns_ref .el-button:hover svg {
+  transform: scale(1.15);
+}
+
+#customerInfoPopup {
+  z-index: 9999;
+}

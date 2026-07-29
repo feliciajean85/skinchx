@@ -1,0 +1,666 @@
+/**
+ * Kawaii Booking Dashboard Styles
+ * Pastel Pink & Mint Theme with Minimal Line-Art Icons
+ */
+
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@400;500;600;700&display=swap');
+
+:root {
+  --kawaii-pink: #FFB5C5;
+  --kawaii-pink-light: #FFE4EC;
+  --kawaii-pink-dark: #E8829A;
+  --kawaii-mint: #98D9C2;
+  --kawaii-mint-light: #D4F1E8;
+  --kawaii-mint-dark: #5FBDA0;
+  --kawaii-cream: #FFF9F5;
+  --kawaii-lavender: #E8D5F2;
+  --kawaii-peach: #FFCAB0;
+  --kawaii-yellow: #FFF3B5;
+  --kawaii-text: #5A4A5A;
+  --kawaii-text-light: #8A7A8A;
+  --kawaii-shadow: rgba(255, 181, 197, 0.25);
+  --kawaii-border-radius: 16px;
+  --kawaii-font: 'Quicksand', sans-serif;
+}
+
+/* ============================================
+   BOOKING WRAP CONTAINER
+   ============================================ */
+.amelia-booking-wrap {
+  background: var(--kawaii-mint-light);
+  padding: 30px;
+  border-radius: var(--kawaii-border-radius);
+  font-family: var(--kawaii-font);
+  box-shadow: 0 8px 32px var(--kawaii-shadow);
+  position: relative;
+  overflow: hidden;
+}
+
+/* ============================================
+   PAGE TITLE
+   ============================================ */
+.amelia-booking-wrap h1.wp-heading-inline {
+  font-family: var(--kawaii-font);
+  font-weight: 700;
+  font-size: 28px;
+  color: var(--kawaii-text);
+  margin-bottom: 24px;
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.amelia-booking-wrap h1.wp-heading-inline::before {
+  content: '';
+  display: inline-block;
+  width: 8px;
+  height: 8px;
+  background: var(--kawaii-pink);
+  border-radius: 50%;
+  animation: kawaii-bounce 1.5s ease-in-out infinite;
+}
+
+.amelia-booking-wrap h1.wp-heading-inline::after {
+  content: '';
+  display: inline-block;
+  width: 6px;
+  height: 6px;
+  background: var(--kawaii-mint);
+  border-radius: 50%;
+  animation: kawaii-bounce 1.5s ease-in-out infinite 0.2s;
+}
+
+@keyframes kawaii-bounce {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-5px); }
+}
+
+/* ============================================
+   SEARCH & FILTER BAR
+   ============================================ */
+.amelia-booking-wrap .d-flex.justify-content-between {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 24px;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+
+.amelia-booking-wrap input[type="text"],
+.amelia-booking-wrap input#booking-search,
+.amelia-booking-wrap input#booking-date-range {
+  font-family: var(--kawaii-font);
+  padding: 12px 20px;
+  border: 2px solid var(--kawaii-pink-light);
+  border-radius: 25px;
+  background: white;
+  font-size: 14px;
+  color: var(--kawaii-text);
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 12px rgba(255, 181, 197, 0.15);
+  min-width: 220px;
+}
+
+.amelia-booking-wrap input[type="text"]:focus,
+.amelia-booking-wrap input#booking-search:focus,
+.amelia-booking-wrap input#booking-date-range:focus {
+  outline: none;
+  border-color: var(--kawaii-mint);
+  box-shadow: 0 4px 20px rgba(152, 217, 194, 0.3);
+}
+
+.amelia-booking-wrap input::placeholder {
+  color: var(--kawaii-text-light);
+}
+
+/* Clear Button */
+.amelia-booking-wrap button#booking-date-clear,
+.amelia-booking-wrap button#back-to-list {
+  font-family: var(--kawaii-font);
+  padding: 10px 20px;
+  border: 2px solid var(--kawaii-pink);
+  border-radius: 25px;
+  background: white;
+  color: var(--kawaii-pink-dark);
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.amelia-booking-wrap button#booking-date-clear:hover,
+.amelia-booking-wrap button#back-to-list:hover {
+  background: var(--kawaii-pink);
+  color: white;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(255, 181, 197, 0.4);
+}
+
+/* ============================================
+   TABLE STYLES
+   ============================================ */
+.amelia-table {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0 12px;
+  position: relative;
+  z-index: 1;
+}
+
+/* Table Header */
+.amelia-table thead th {
+  font-family: var(--kawaii-font);
+  text-transform: uppercase;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  color: var(--kawaii-text-light);
+  padding: 16px 20px;
+  background: transparent;
+  border: none;
+  text-align: left;
+}
+
+.amelia-table thead th:first-child {
+  padding-left: 28px;
+}
+
+/* Table Body Rows */
+.amelia-table tbody tr {
+  background: white;
+  border-radius: var(--kawaii-border-radius);
+  box-shadow: 0 4px 16px rgba(255, 181, 197, 0.12);
+  transition: all 0.3s ease;
+}
+
+.amelia-table tbody tr:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 24px rgba(152, 217, 194, 0.25);
+}
+
+.amelia-table tbody tr.no-data {
+  background: transparent;
+  box-shadow: none;
+}
+
+.amelia-table tbody tr.no-data:hover {
+  transform: none;
+}
+
+.amelia-table tbody td {
+  font-family: var(--kawaii-font);
+  padding: 20px;
+  border: none;
+  font-size: 14px;
+  color: var(--kawaii-text);
+  vertical-align: middle;
+}
+
+.amelia-table tbody td:first-child {
+  border-radius: var(--kawaii-border-radius) 0 0 var(--kawaii-border-radius);
+  padding-left: 28px;
+}
+
+.amelia-table tbody td:last-child {
+  border-radius: 0 var(--kawaii-border-radius) var(--kawaii-border-radius) 0;
+}
+
+.amelia-table tbody td strong {
+  font-weight: 600;
+  color: var(--kawaii-text);
+}
+
+/* Customer name link - mint green bold */
+.amelia-table tbody td a.customer-name-link,
+.amelia-table tbody td a.customer-name-link strong {
+  color: var(--kawaii-mint-dark) !important;
+  font-weight: 700 !important;
+}
+
+.amelia-table tbody td a {
+  color: var(--kawaii-mint-dark);
+  text-decoration: none;
+  font-weight: 600;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  transition: all 0.3s ease;
+}
+
+.amelia-table tbody td a svg.customer-link-icon {
+  width: 14px;
+  height: 14px;
+  stroke: var(--kawaii-mint);
+  transition: all 0.3s ease;
+  opacity: 0.7;
+  flex-shrink: 0;
+}
+
+.amelia-table tbody td a:hover {
+  color: #3A9A7D;
+  text-decoration: underline;
+  text-decoration-style: wavy;
+  text-underline-offset: 3px;
+}
+
+.amelia-table tbody td a:hover svg.customer-link-icon {
+  stroke: var(--kawaii-mint-dark);
+  opacity: 1;
+  transform: translate(2px, -2px);
+}
+
+/* Sub ID Styling */
+.amelia-table .sub-id {
+  font-size: 11px;
+  color: var(--kawaii-text-light);
+  margin-top: 4px;
+  font-weight: 500;
+}
+
+/* ============================================
+   STATUS BADGES - Kawaii Style
+   ============================================ */
+.status-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 8px 16px;
+  border-radius: 20px;
+  font-family: var(--kawaii-font);
+  font-size: 12px;
+  font-weight: 600;
+  text-transform: capitalize;
+  border: 2px solid transparent;
+}
+
+.status-badge::before {
+  content: '';
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+.status-approved {
+  background: var(--kawaii-mint-light);
+  color: var(--kawaii-mint-dark);
+  border-color: var(--kawaii-mint);
+}
+
+.status-approved::before {
+  background: var(--kawaii-mint-dark);
+}
+
+.status-pending {
+  background: var(--kawaii-yellow);
+  color: #C4A000;
+  border-color: #E8D56B;
+}
+
+.status-pending::before {
+  background: #C4A000;
+}
+
+.status-no-show,
+.status-rejected {
+  background: var(--kawaii-pink-light);
+  color: var(--kawaii-pink-dark);
+  border-color: var(--kawaii-pink);
+}
+
+.status-no-show::before,
+.status-rejected::before {
+  background: var(--kawaii-pink-dark);
+}
+
+.status-canceled {
+  background: var(--kawaii-lavender);
+  color: #8B6B9E;
+  border-color: #C9B0DC;
+}
+
+.status-canceled::before {
+  background: #8B6B9E;
+}
+
+/* ============================================
+   ACTION BUTTONS - Kawaii Icon Style
+   ============================================ */
+.addon_amelia_btns_ref {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+/* Base Button Style */
+.addon_amelia_btns_ref .el-button,
+.addon_amelia_btns_ref .amelia-btn-primary {
+  position: relative;
+  width: 42px;
+  height: 42px;
+  padding: 0;
+  border-radius: 12px;
+  border: 2px solid transparent;
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: white;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  overflow: visible;
+}
+
+.addon_amelia_btns_ref .el-button:hover,
+.addon_amelia_btns_ref .amelia-btn-primary:hover {
+  transform: translateY(-4px) scale(1.05);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
+}
+
+/* Kawaii Icon SVG Styling */
+.addon_amelia_btns_ref .el-button svg,
+.addon_amelia_btns_ref .amelia-btn-primary svg {
+  width: 20px;
+  height: 20px;
+  stroke-width: 2;
+  transition: all 0.3s ease;
+}
+
+/* History Button */
+.addon_amelia_btns_ref .view-history {
+  background: linear-gradient(135deg, var(--kawaii-mint-light) 0%, var(--kawaii-mint) 100%) !important;
+  border-color: var(--kawaii-mint) !important;
+  color: white !important;
+}
+
+.addon_amelia_btns_ref .view-history svg {
+  stroke: white;
+}
+
+.addon_amelia_btns_ref .view-history .booking-count {
+  position: absolute;
+  top: -8px;
+  right: -8px;
+  background: var(--kawaii-pink) !important;
+  color: white;
+  border-radius: 50%;
+  width: 22px !important;
+  height: 22px !important;
+  font-size: 10px;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 2px solid white;
+  font-family: var(--kawaii-font);
+}
+
+/* Sky blue badge when count is greater than 1 */
+.addon_amelia_btns_ref .view-history .booking-count.count-multiple {
+  background: #87CEEB !important;
+}
+
+/* View Details Button */
+.addon_amelia_btns_ref .view_appoinment {
+  background: linear-gradient(135deg, var(--kawaii-lavender) 0%, #D4B8E8 100%) !important;
+  border-color: #C9B0DC !important;
+}
+
+/* Body Chart Button */
+.addon_amelia_btns_ref .body_chart {
+  background: linear-gradient(135deg, var(--kawaii-peach) 0%, #FFB090 100%) !important;
+  border-color: #E8A080 !important;
+}
+
+.addon_amelia_btns_ref .body_chart .dashicons {
+  color: white;
+  font-size: 18px;
+  width: auto;
+  height: auto;
+}
+
+/* Attended Button */
+.addon_amelia_btns_ref .attended {
+  background: linear-gradient(135deg, var(--kawaii-mint-light) 0%, var(--kawaii-mint) 100%) !important;
+  border-color: var(--kawaii-mint) !important;
+}
+
+.addon_amelia_btns_ref .attended img {
+  filter: brightness(0) invert(1);
+}
+
+/* Not Attended Button */
+.addon_amelia_btns_ref .no-attend {
+  background: linear-gradient(135deg, var(--kawaii-pink-light) 0%, var(--kawaii-pink) 100%) !important;
+  border-color: var(--kawaii-pink) !important;
+}
+
+.addon_amelia_btns_ref .no-attend img {
+  filter: brightness(0) invert(1);
+}
+
+/* Referred Button */
+.addon_amelia_btns_ref .referred {
+  background: linear-gradient(135deg, var(--kawaii-pink-light) 0%, var(--kawaii-pink) 100%) !important;
+  border-color: var(--kawaii-pink) !important;
+}
+
+.addon_amelia_btns_ref .referred img {
+  filter: brightness(0) invert(1);
+}
+
+/* Not Referred Button */
+.addon_amelia_btns_ref .no-referred {
+  background: linear-gradient(135deg, var(--kawaii-mint-light) 0%, var(--kawaii-mint) 100%) !important;
+  border-color: var(--kawaii-mint) !important;
+}
+
+.addon_amelia_btns_ref .no-referred img {
+  filter: brightness(0) invert(1);
+}
+
+/* Info Button */
+.addon_amelia_btns_ref .info {
+  background: linear-gradient(135deg, var(--kawaii-yellow) 0%, #F5E060 100%) !important;
+  border-color: #E8D040 !important;
+}
+
+.addon_amelia_btns_ref .info img {
+  filter: brightness(0) saturate(100%) invert(45%) sepia(70%) saturate(500%) hue-rotate(10deg);
+}
+
+/* No Data Button */
+.addon_amelia_btns_ref .no-data {
+  background: linear-gradient(135deg, #F0F0F0 0%, #E0E0E0 100%) !important;
+  border-color: #D0D0D0 !important;
+}
+
+.addon_amelia_btns_ref .no-data img {
+  filter: brightness(0) invert(0.7);
+}
+
+/* Button Images */
+.addon_amelia_btns_ref .amelia-btn-primary img {
+  width: 18px;
+  height: 18px;
+  object-fit: contain;
+}
+
+/* ============================================
+   PAGINATION - Kawaii Style
+   ============================================ */
+.amelia-pagination,
+#booking-pagination {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  margin-top: 24px;
+  padding-top: 20px;
+}
+
+.amelia-pagination a,
+#booking-pagination .pagination a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 40px;
+  height: 40px;
+  padding: 0 14px;
+  border-radius: 12px;
+  background: white;
+  border: 2px solid var(--kawaii-pink-light);
+  text-decoration: none;
+  color: var(--kawaii-text);
+  font-family: var(--kawaii-font);
+  font-weight: 600;
+  font-size: 14px;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 8px rgba(255, 181, 197, 0.1);
+}
+
+.amelia-pagination a:hover,
+#booking-pagination .pagination a:hover {
+  background: var(--kawaii-pink-light);
+  border-color: var(--kawaii-pink);
+  transform: translateY(-2px);
+}
+
+.amelia-pagination a.active,
+#booking-pagination .pagination a.active {
+  background: var(--kawaii-mint);
+  border-color: var(--kawaii-mint);
+  color: white;
+  box-shadow: 0 4px 16px rgba(152, 217, 194, 0.4);
+}
+
+#booking-pagination .pagination .dots {
+  color: var(--kawaii-text-light);
+  padding: 0 8px;
+}
+
+/* ============================================
+   NO DATA STATE
+   ============================================ */
+.amelia-table tbody tr.no-data td {
+  text-align: center;
+  padding: 60px 20px;
+}
+
+.amelia-table tbody tr.no-data svg {
+  stroke: var(--kawaii-pink);
+}
+
+.amelia-table tbody tr.no-data h3 {
+  font-family: var(--kawaii-font);
+  color: var(--kawaii-text);
+  font-weight: 600;
+  margin: 16px 0 8px;
+}
+
+.amelia-table tbody tr.no-data p {
+  font-family: var(--kawaii-font);
+  color: var(--kawaii-text-light);
+  font-size: 14px;
+}
+
+/* ============================================
+   TOOLTIP - Kawaii Style
+   ============================================ */
+.mobile-global-tooltip {
+  font-family: var(--kawaii-font);
+  background: linear-gradient(135deg, var(--kawaii-text) 0%, #4A3A4A 100%);
+  color: white;
+  padding: 8px 14px;
+  font-size: 12px;
+  font-weight: 500;
+  border-radius: 10px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
+}
+
+/* ============================================
+   RESPONSIVE ADJUSTMENTS
+   ============================================ */
+@media screen and (max-width: 768px) {
+  .amelia-booking-wrap {
+    padding: 15px;
+  }
+  
+  .amelia-booking-wrap .d-flex.justify-content-between {
+    flex-direction: column;
+    align-items: stretch;
+  }
+  
+  .amelia-booking-wrap input[type="text"],
+  .amelia-booking-wrap input#booking-search,
+  .amelia-booking-wrap input#booking-date-range {
+    min-width: 100%;
+    box-sizing: border-box;
+  }
+  
+  .amelia-booking-wrap button#booking-date-clear,
+  .amelia-booking-wrap button#back-to-list {
+    width: 100%;
+    box-sizing: border-box;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+  
+  .amelia-table thead {
+    display: none;
+  }
+  
+  .amelia-table tbody tr {
+    display: block;
+    margin-bottom: 16px;
+    padding: 16px;
+  }
+  
+  .amelia-table tbody td {
+    display: block;
+    padding: 8px 16px;
+    text-align: left;
+  }
+  
+  .amelia-table tbody td:first-child {
+    border-radius: var(--kawaii-border-radius) var(--kawaii-border-radius) 0 0;
+  }
+  
+  .amelia-table tbody td:last-child {
+    border-radius: 0 0 var(--kawaii-border-radius) var(--kawaii-border-radius);
+  }
+  
+  .addon_amelia_btns_ref {
+    justify-content: flex-start;
+    flex-wrap: wrap;
+    gap: 8px;
+    max-width: 100%;
+    overflow-x: auto;
+  }
+  
+  .addon_amelia_btns_ref .el-button,
+  .addon_amelia_btns_ref .amelia-btn-primary {
+    width: 36px;
+    height: 36px;
+    min-width: 36px;
+    flex-shrink: 0;
+  }
+  
+  /* Pagination mobile fix */
+  .amelia-pagination,
+  #booking-pagination {
+    flex-wrap: wrap;
+    gap: 6px;
+  }
+  
+  .amelia-pagination a,
+  #booking-pagination .pagination a {
+    min-width: 36px;
+    height: 36px;
+    padding: 0 10px;
+    font-size: 12px;
+  }
+}

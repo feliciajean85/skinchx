@@ -1,0 +1,149 @@
+/**
+ * Amelia Appointment List Schedule - Admin CSS V2
+ */
+
+/* General styles */
+.aals-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 5px;
+}
+
+.aals-actions .button {
+    white-space: nowrap;
+}
+
+/* Stats cards */
+.aals-stats {
+    margin: 20px 0;
+}
+
+.aals-stat-card {
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.aals-stat-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+}
+
+/* Cards */
+.card {
+    background: #fff;
+    border: 1px solid #ccd0d4;
+    box-shadow: 0 1px 1px rgba(0,0,0,0.04);
+}
+
+.card h3 {
+    color: #23282d;
+    border-bottom: 1px solid #eee;
+    padding-bottom: 10px;
+}
+
+/* Form tables */
+.form-table th {
+    width: 180px;
+    padding: 15px 10px;
+}
+
+.form-table td {
+    padding: 15px 10px;
+}
+
+/* Status badges */
+.status-active { color: #0073aa; }
+.status-scheduled { color: #00a32a; }
+.status-ready { color: #d54e21; }
+.status-sending { color: #f0b849; }
+.status-sent { color: #46b450; }
+.status-failed { color: #dc3232; }
+.status-waiting { color: #999; }
+.status-canceled { color: #666; }
+
+/* Modals */
+#aals-preview-modal,
+#aals-run-modal {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
+}
+
+/* List table improvements */
+.wp-list-table .column-service { width: 20%; }
+.wp-list-table .column-timing { width: 18%; }
+.wp-list-table .column-recipients { width: 15%; }
+.wp-list-table .column-status { width: 15%; }
+.wp-list-table .column-next_trigger { width: 12%; }
+.wp-list-table .column-actions { width: 20%; }
+
+/* Responsive */
+@media screen and (max-width: 782px) {
+    .aals-stats {
+        flex-direction: column;
+    }
+    
+    .aals-actions {
+        flex-direction: column;
+        width: 100%;
+    }
+    
+    .aals-actions .button {
+        margin-bottom: 5px;
+        width: 100%;
+        box-sizing: border-box;
+        text-align: center;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+    
+    /* Form card mobile fixes */
+    .card {
+        padding: 12px !important;
+        margin-left: 0 !important;
+        margin-right: 0 !important;
+        max-width: 100% !important;
+        box-sizing: border-box;
+    }
+    
+    .form-table th {
+        display: block;
+        width: 100%;
+        padding: 8px 0 4px 0;
+    }
+    
+    .form-table td {
+        display: block;
+        width: 100%;
+        padding: 4px 0 12px 0;
+    }
+    
+    /* All buttons 75% width, centered on mobile */
+    .button,
+    input[type="submit"],
+    a.button {
+        width: 75% !important;
+        box-sizing: border-box !important;
+        text-align: center;
+        margin: 0 auto 8px auto !important;
+        display: block !important;
+    }
+    
+    /* Submit button mobile */
+    .submit input[type="submit"],
+    .submit .button,
+    p.submit .button {
+        width: 100%;
+        box-sizing: border-box;
+        margin-bottom: 10px;
+        display: block;
+    }
+    
+    /* List table mobile */
+    .wp-list-table .column-actions {
+        width: auto;
+    }
+    
+    /* Inline flex containers */
+    div[style*="display: flex"] {
+        flex-wrap: wrap !important;
+    }
+}

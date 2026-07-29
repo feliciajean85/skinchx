@@ -1,0 +1,251 @@
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+<div id="pdf-content">
+    <section class="page">
+        <h1>Page 1</h1>
+        <p>Long content or image here...</p>
+    </section>
+    <section class="page">
+        <h1>Page 2</h1>
+        <div class="pdf-capture">
+      <section class="section1">
+        <div class="container">
+          <div class="headingCol mb-3 pt-4">
+            <h1 class="text-center">
+              RECOMMENDATION FOR <br>
+              SKIN CANCER SCREENING FOLLOW-UP
+            </h1>
+            <hr class="border-bottom">
+          </div>
+          <form action="" id="body_chart_ref_form">
+              <input type="hidden" name="report_to_email" id="report_to_email">
+            <div class="mb-2">
+              <strong>
+                Details of participant who underwent skin screening:
+              </strong>
+            </div>
+            <div class="mb-2 d-flex align-items-end">
+              <p class="mb-0 text-nowrap">Date of skin screening:</p>
+              <input class="pdfInput" type="date" name="date_screen_care" id="" value="2025-01-14">
+            </div>
+            <div class="mb-2 d-flex align-items-end">
+              <p class="mb-0 text-nowrap">Name:</p>
+              <input class="pdfInput" type="text" name="name" id="" value="">
+            </div>
+            <div class="mb-2 d-flex align-items-end">
+              <p class="mb-0 text-nowrap">DOB:</p>
+              <input class="pdfInput" type="date" name="dob" id="" value="1965-01-14">
+              <p class="mb-0 text-nowrap">Age:</p>
+              <input class="pdfInput" type="text" name="age" id="" value="57-75">
+              <p class="mb-0 text-nowrap">Phone Number:</p>
+              <input class="pdfInput" type="text" name="phone" id="" value="(432) 423-423">
+            </div>
+            <div class="my-4">
+              <strong>
+                Our clinician has indicated area(s) that require further
+                examination and <br>
+                follow-up with the participants own doctor or specialist
+              </strong>
+            </div>
+            <div class="canvaDiv">
+                   <section class="section4">
+        <div class="container">
+         
+          <div class="innerContainer examinationType">
+           
+            <div class="canvaContainer">
+              <div class="innerCanva">
+                <div class="grid-container">
+                  <div class="grid-item item-1">
+                 
+                       <canvas id="frontCanvas" width="300" height="600"></canvas>
+                                             <input name="mark_positions" type="hidden" id="markPositions" value="{&quot;frontCanvas&quot;:[{&quot;x&quot;:130,&quot;y&quot;:255.203125}],&quot;face1Canvas&quot;:[{&quot;x&quot;:129.625,&quot;y&quot;:213.203125}],&quot;face2Canvas&quot;:[{&quot;x&quot;:68.625,&quot;y&quot;:227.203125}],&quot;backCanvas&quot;:[{&quot;x&quot;:172.3125,&quot;y&quot;:227.203125}]}">
+                      <input name="frontCanvas" type="hidden" id="frontCanvas_point" value=""> 
+                      <!--  <button type="button" class="removefrompdf" onclick="undoMark('frontCanvas')">Undo</button>-->
+                  </div>
+                  <div class="grid-item item-2">
+                  
+                    <canvas id="backCanvas" width="300" height="600"></canvas>
+                      <input name="backCanvas" type="hidden" id="backCanvas_point" value="">
+                     <!--    <button type="button" class="removefrompdf" onclick="undoMark('backCanvas')">Undo</button>-->
+                  </div>
+                  <div class="grid-item item-3">
+                   
+                        <canvas id="face1Canvas" width="200" height="300"></canvas>
+                        <input name="face1Canvas" type="hidden" id="face1Canvas_point" value="">
+                   <!--   <button type="button" class="removefrompdf" onclick="undoMark('face1Canvas')">Undo</button>-->
+                  </div>
+                  <div class="grid-item item-4">
+                   
+                        <canvas id="face2Canvas" width="200" height="300"></canvas>
+                      <input name="face2Canvas" type="hidden" id="face2Canvas_point" value="">
+                      <!--<button type="button" class="removefrompdf" onclick="undoMark('face2Canvas')">Undo</button>-->
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        
+        </div>
+      </section>
+            <!--  <img class="w-100" src="/admin/images/Screenshot_1.png" alt="" />-->
+            </div>
+            <div class="parts my-4">
+              <div class="mb-2 d-flex align-items-end">
+                <p class="mb-0 text-nowrap">Location(s):</p>
+              </div>
+              <div class="mb-2 d-flex align-items-end">
+                <p class="mb-0 text-nowrap">1</p>
+                <input class="pdfInput" type="text" name="localtion_1" id="" value="Pull from body chart or remove from there">
+              </div>
+              <div class="mb-2 d-flex align-items-end">
+                <p class="mb-0 text-nowrap">2</p>
+                <input class="pdfInput" type="text" name="localtion_2" id="" value="Pull from body chart or remove from there">
+              </div>
+            </div>
+            <div class="parts my-4">
+              <div class="mb-2 d-flex align-items-end">
+                <p class="mb-0">
+                  Clinical history and features:
+                  <small>
+                    <i>Colour, Shape, Border, Size, Surface, Symptoms </i>
+                  </small>
+                </p>
+              </div>
+              <div class="mb-2 d-flex align-items-end">
+                <p class="mb-0 text-nowrap">1</p>
+                <input class="pdfInput" type="text" name="clinical_1" id="" value="Need more space or text to get ">
+              </div>
+              <div class="mb-2 d-flex align-items-end">
+                <p class="mb-0 text-nowrap">2</p>
+                <input class="pdfInput" type="text" name="clinical_2" id="" value="Smaller?">
+              </div>
+            </div>
+            <div class="parts my-4">
+              <div class="mb-2 d-flex align-items-end">
+                <p class="mb-0">
+                  Dermatoscopic features:
+                  <small>
+                    <i>Pigmented or Non-Pigmented, Pattern(s), Colour(s) Clues
+                      to Malignancy</i>
+                  </small>
+                </p>
+              </div>
+              <div class="mb-2 d-flex align-items-end">
+                <p class="mb-0 text-nowrap">1</p>
+                <input class="pdfInput" type="text" name="dermatoscopic_1" id="" value="More space or scale">
+              </div>
+              <div class="mb-2 d-flex align-items-end">
+                <p class="mb-0 text-nowrap">2</p>
+                <input class="pdfInput" type="text" name="dermatoscopic_2" id="" value="Can’t sign below on mobile">
+              </div>
+            </div>
+            <div class="parts my-4">
+              <div class="d-flex align-items-end">
+                <p class="mb-0 text-nowrap">Signature of Clinician:</p>
+              </div>
+              <div class="mb-2">
+                <div class="d-flex">
+                  <canvas width="300" height="100" style="border-bottom: 1px dotted;"></canvas>
+                  <div class="restBtn">
+                    <button id="resetSignature" class="removefrompdf">Reset</button>
+                  </div>
+                </div>
+                <p>Christine Comans</p>
+                <small>
+                  <i>
+                    GCertMed (Skin Cancer Medicine) BAppHSc (Clinical
+                    Aesthetics)
+                  </i>
+                </small>
+              </div>
+            </div>
+            <div class="footerDiv mb-3">
+              <img class="w-100" src="https://demo-server-encoder.online/amelia/wp-content/plugins/amelia-addon//admin/images/Screenshot_2Footer.png" alt="">
+            </div>
+              <input type="hidden" name="appoinment_id" id="appoinment_id" value="50">
+                 <div class="amlia_form_btns removefrompdf">
+        <button class="btn btn-primary" name="submit" type="submit" id="save_body_chart_ref">Save</button>
+        <button class="btn btn-primary" id="pdf_generator" type="button">Pdf Generate</button>
+          
+     
+        <button class="btn btn-primary" id="openModalBtn" type="button">Send Report</button>
+     <!--   <button class="btn btn-primary" id="manual_report_send" id="save_send_email">Manual & Send Report</button>-->
+    </div>
+              <input type="hidden" id="signatureData" name="signatureData">
+          </form>
+            
+        </div>
+          
+      </section>
+          </div>
+    </section>
+</div>
+<button id="generate-pdf">Generate PDF</button>
+<style>
+    #pdf-content {
+    width: 800px; /* Set a default width */
+    margin: 0 auto;
+}
+
+.page {
+    page-break-after: always; /* Ensure sections break into pages */
+    padding: 20px;
+    background: white;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+}
+
+@media (max-width: 768px) {
+    #pdf-content {
+        width: 100%; /* Make content responsive */
+        font-size: smaller; /* Reduce font size for smaller devices */
+    }
+}
+
+</style>
+<script>
+    document.getElementById("generate-pdf").addEventListener("click", function () {
+    const content = document.getElementById("pdf-content");
+    const sections = content.querySelectorAll(".page");
+     const { jsPDF } = window.jspdf;
+            const pdf = new jsPDF({
+        orientation: 'portrait',
+        unit: 'mm',
+        format: 'a4',
+      });
+    const pageWidth = pdf.internal.pageSize.getWidth();
+    const pageHeight = pdf.internal.pageSize.getHeight();
+
+    // Function to render each section
+    const renderSection = (section, index, callback) => {
+        html2canvas(section, {
+            scale: window.devicePixelRatio || 2, // High-resolution scaling
+        }).then(canvas => {
+            const imgData = canvas.toDataURL('image/jpeg', 0.7);
+            const imgWidth = pageWidth; // Fit to PDF width
+            const imgHeight = (canvas.height * pageWidth) / canvas.width;
+
+            if (index > 0) pdf.addPage();
+            pdf.addImage(imgData, "PNG", 0, 0, imgWidth, imgHeight);
+
+            callback();
+        });
+    };
+
+    // Render all sections sequentially
+    let index = 0;
+    const renderNext = () => {
+        if (index < sections.length) {
+            renderSection(sections[index], index, () => {
+                index++;
+                renderNext();
+            });
+        } else {
+            pdf.save("document.pdf");
+        }
+    };
+
+    renderNext();
+});
+
+</script>
